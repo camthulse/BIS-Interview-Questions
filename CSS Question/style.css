@@ -1,0 +1,118 @@
+/*
+    Name: Cameron Hulse
+    Date: 10/27/22
+    Project: CSS Interview Question
+*/
+
+
+/*Global CSS Styles*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+/*Class CSS Styles*/
+.content-wrapper{
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+/*ID CSS Styles*/
+#box-one{
+    background-color: blue;
+    color: white;
+    animation: boxOne 2.7s;
+    animation-iteration-count: infinite;
+}
+
+#box-two_text{
+    position: relative;
+    animation: boxTwo 2.8s infinite cubic-bezier(0.35, 0.04, 0.19, 0.89);
+}
+
+#box-three{
+    background-color: blue;
+    color: white;
+    display: flex;
+}
+
+#box-three_text{
+    position: relative;
+    animation: boxThree_moving 2.8s infinite, boxThree_color 2.8s infinite;
+}
+
+/*Keyframe Animations*/
+
+/*This is the animation for the first box labeled "ONE"*/
+@keyframes boxOne{
+    from {
+        background-color: blue;
+        color: white;
+    }
+    50% {
+        background-color: yellow;
+        color: black;
+    }
+}
+/*This is the animation for the second box labeled "TWO"*/
+@keyframes boxTwo{
+    from{
+        transform: rotate(0deg);
+    }
+    80%{
+        transform: rotate(360deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*This is the animation for moving the text of the third box labeled "THREE"*/
+@keyframes boxThree_moving{
+    from{
+        top: -25%;
+    }
+    25%{
+        top: 0%;
+    }
+    50%{
+        top: 25%;
+    }
+    to{
+        top: -25%;
+    }
+}
+/*This is the animation for changing the color of the text in the third box labeled "THREE"*/
+@keyframes boxThree_color{
+    from{
+        color: white;
+    }
+    25%{
+        color: black;
+    }
+    50%{
+        color: white;
+    }
+    75%{
+        color: black;
+    }
+    to{
+        color: white;
+    }
+}
